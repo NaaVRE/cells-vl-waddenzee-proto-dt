@@ -4,7 +4,6 @@ library(jsonlite)
 
 
 
-secret_copernicus_api = Sys.getenv('secret_copernicus_api')
 secret_s3_access_key = Sys.getenv('secret_s3_access_key')
 secret_s3_secret_key = Sys.getenv('secret_s3_secret_key')
 
@@ -12,7 +11,6 @@ print('option_list')
 option_list = list(
 
 make_option(c("--acolite_processing"), action="store", default=NA, type="character", help="my description"),
-make_option(c("--param_copernicus_api"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--param_s3_public_bucket"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--param_s3_server"), action="store", default=NA, type="character", help="my description"),
 make_option(c("--id"), action="store", default=NA, type="character", help="task id")
@@ -61,13 +59,6 @@ print(opt$acolite_processing)
 acolite_processing = var_serialization(opt$acolite_processing)
 print("---------------------------------------------------------------------------------")
 
-print("Retrieving param_copernicus_api")
-var = opt$param_copernicus_api
-print(var)
-var_len = length(var)
-print(paste("Variable param_copernicus_api has length", var_len))
-
-param_copernicus_api <- gsub("\"", "", opt$param_copernicus_api)
 print("Retrieving param_s3_public_bucket")
 var = opt$param_s3_public_bucket
 print(var)
