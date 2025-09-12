@@ -17,7 +17,7 @@ secret_s3_secret_key = os.getenv('secret_s3_secret_key')
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
 
-arg_parser.add_argument('--param_copernicus_e_mail_general_user_account_', action='store', type=str, required=True, dest='param_copernicus_e_mail_general_user_account_')
+arg_parser.add_argument('--param_copernicus_e_mail_general_user_account', action='store', type=str, required=True, dest='param_copernicus_e_mail_general_user_account')
 arg_parser.add_argument('--param_s3_public_bucket', action='store', type=str, required=True, dest='param_s3_public_bucket')
 arg_parser.add_argument('--param_s3_server', action='store', type=str, required=True, dest='param_s3_server')
 
@@ -27,7 +27,7 @@ print(args)
 id = args.id
 
 
-param_copernicus_e_mail_general_user_account_ = args.param_copernicus_e_mail_general_user_account_.replace('"','')
+param_copernicus_e_mail_general_user_account = args.param_copernicus_e_mail_general_user_account.replace('"','')
 param_s3_public_bucket = args.param_s3_public_bucket.replace('"','')
 param_s3_server = args.param_s3_server.replace('"','')
 
@@ -51,7 +51,7 @@ catalogue_sub_filename = "/tmp/data/catalogue_sub.json"
 with open(catalogue_sub_filename, 'w') as f:
     json.dump(catalogue_sub, f)
     
-access_response = dtSat.get_copernicus_access_token(username = param_copernicus_e_mail_general_user_account_, 
+access_response = dtSat.get_copernicus_access_token(username = param_copernicus_e_mail_general_user_account, 
                                                     password = secret_copernicus_password_general_user_account)
 
 access_response_filename = "/tmp/data/access_response.json"
