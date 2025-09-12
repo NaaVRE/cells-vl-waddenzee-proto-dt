@@ -2,10 +2,26 @@ setwd('/app')
 library(optparse)
 library(jsonlite)
 
+if (!requireNamespace("devtools", quietly = TRUE)) {
+	install.packages("devtools", repos="http://cran.us.r-project.org")
+}
+library(devtools)
 if (!requireNamespace("aws.s3", quietly = TRUE)) {
 	install.packages("aws.s3", repos="http://cran.us.r-project.org")
 }
 library(aws.s3)
+if (!requireNamespace("ncdf4", quietly = TRUE)) {
+	install.packages("ncdf4", repos="http://cran.us.r-project.org")
+}
+library(ncdf4)
+if (!requireNamespace("akima", quietly = TRUE)) {
+	install.packages("akima", repos="http://cran.us.r-project.org")
+}
+library(akima)
+if (!requireNamespace("lubridate", quietly = TRUE)) {
+	install.packages("lubridate", repos="http://cran.us.r-project.org")
+}
+library(lubridate)
 
 
 secret_s3_access_key = Sys.getenv('secret_s3_access_key')
