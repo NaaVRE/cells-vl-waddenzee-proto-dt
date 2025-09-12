@@ -7,7 +7,7 @@ import json
 import os
 arg_parser = argparse.ArgumentParser()
 
-secret_copernicus_api = os.getenv('secret_copernicus_api')
+secret_copernicus_password_general_user_account = os.getenv('secret_copernicus_password_general_user_account')
 secret_s3_access_key = os.getenv('secret_s3_access_key')
 secret_s3_secret_key = os.getenv('secret_s3_secret_key')
 
@@ -16,7 +16,7 @@ arg_parser.add_argument('--id', action='store', type=str, required=True, dest='i
 
 arg_parser.add_argument('--path_ids', action='store', type=str, required=True, dest='path_ids')
 
-arg_parser.add_argument('--param_copernicus_api', action='store', type=str, required=True, dest='param_copernicus_api')
+arg_parser.add_argument('--param_copernicus_e_mail_general_user_account_', action='store', type=str, required=True, dest='param_copernicus_e_mail_general_user_account_')
 arg_parser.add_argument('--param_s3_public_bucket', action='store', type=str, required=True, dest='param_s3_public_bucket')
 arg_parser.add_argument('--param_s3_server', action='store', type=str, required=True, dest='param_s3_server')
 
@@ -27,7 +27,7 @@ id = args.id
 
 path_ids = json.loads(args.path_ids)
 
-param_copernicus_api = args.param_copernicus_api.replace('"','')
+param_copernicus_e_mail_general_user_account_ = args.param_copernicus_e_mail_general_user_account_.replace('"','')
 param_s3_public_bucket = args.param_s3_public_bucket.replace('"','')
 param_s3_server = args.param_s3_server.replace('"','')
 
