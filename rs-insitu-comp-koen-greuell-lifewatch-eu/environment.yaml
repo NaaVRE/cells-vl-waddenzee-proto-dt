@@ -5,11 +5,8 @@ dependencies:
   - pip
   - python>=3.8
   - nbconvert
+  - r-aws.s3
   - r-devtools
-  - r-plot3D
   - r-ncdf4
-  - r-dtPP
-  - r-dtWad
-  - r-dtLife
   - papermill
   - ipykernel

@@ -6,26 +6,14 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
 	install.packages("devtools", repos="http://cran.us.r-project.org")
 }
 library(devtools)
-if (!requireNamespace("dtLife", quietly = TRUE)) {
-	install.packages("dtLife", repos="http://cran.us.r-project.org")
+if (!requireNamespace("aws.s3", quietly = TRUE)) {
+	install.packages("aws.s3", repos="http://cran.us.r-project.org")
 }
-library(dtLife)
-if (!requireNamespace("dtPP", quietly = TRUE)) {
-	install.packages("dtPP", repos="http://cran.us.r-project.org")
-}
-library(dtPP)
-if (!requireNamespace("dtWad", quietly = TRUE)) {
-	install.packages("dtWad", repos="http://cran.us.r-project.org")
-}
-library(dtWad)
+library(aws.s3)
 if (!requireNamespace("ncdf4", quietly = TRUE)) {
 	install.packages("ncdf4", repos="http://cran.us.r-project.org")
 }
 library(ncdf4)
-if (!requireNamespace("plot3D", quietly = TRUE)) {
-	install.packages("plot3D", repos="http://cran.us.r-project.org")
-}
-library(plot3D)
 
 
 secret_s3_access_key = Sys.getenv('secret_s3_access_key')
